@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function formValidation() {
+  done = false;
+  // Get the value of the input field with id="mi"
+  let mi = document.getElementById("mi").value;
+  // If mi is Not a Number
+  let text;
+  if (isNaN(mi)) {
+    text = "Input is not valid: " + mi;
+  } else {
+    text = "";
+    done = true;
+  }
+  document.getElementById("msg").innerHTML = text;
+  return done;
+}
+</script>
+<form name="mi2kmForm" action="/mi2km_action" onsubmit="return formValidation()" method="get">
+Enter miles to convert to kilometers
+<input id="mi" type="text" name="mi" value="0">
+<br>
+<input type="submit" value="Submit">
+<div id="msg" style="color:red"></div>
+</form>
+
+</body>
+</html> 

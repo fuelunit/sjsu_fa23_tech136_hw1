@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function formValidation() {
+  done = false;
+  // Get the value of the input field with id="ft"
+  let ft = document.getElementById("ft").value;
+  // If ft is Not a Number
+  let text;
+  if (isNaN(ft)) {
+    text = "Input is not valid: " + ft;
+  } else {
+    text = "";
+    done = true;
+  }
+  document.getElementById("msg").innerHTML = text;
+  return done;
+}
+</script>
+<form name="ft2mForm" action="/ft2m_action" onsubmit="return formValidation()" method="get">
+Enter feet to convert to meters
+<input id="ft" type="text" name="ft" value="0">
+<br>
+<input type="submit" value="Submit">
+<div id="msg" style="color:red"></div>
+</form>
+
+</body>
+</html> 

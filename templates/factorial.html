@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function formValidation() {
+  done = false;
+  // Get the value of the input field with id="num"
+  let num = document.getElementById("num").value;
+  // If num is Not a Number
+  let text;
+  if (isNaN(num)) {
+    text = "Input is not valid: " + num;
+  } else {
+    text = "";
+    done = true;
+  }
+  document.getElementById("msg").innerHTML = text;
+  return done;
+}
+</script>
+<form name="factorial_form" action="/factorial_action" onsubmit="return formValidation()" method="get">
+Enter a number to compute the factorial:
+<input id="num" type="text" name="num" value="0">
+<br>
+<input type="submit" value="Submit">
+<div id="msg" style="color:red"></div>
+</form>
+
+</body>
+</html> 

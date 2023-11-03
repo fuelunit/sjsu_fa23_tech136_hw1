@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function formValidation() {
+  done = false;
+  // Get the value of the input field with id="inches"
+  let inches = document.getElementById("inches").value;
+  // If inches is Not a Number
+  let text;
+  if (isNaN(inches)) {
+    text = "Input is not valid: " + inches;
+  } else {
+    text = "";
+    done = true;
+  }
+  document.getElementById("msg").innerHTML = text;
+  return done;
+}
+</script>
+<form name="inch2cmForm" action="/inch2cm_action" onsubmit="return formValidation()" method="get">
+Enter inches to convert to CM
+<input id="inches" type="text" name="inches" value="0">
+<br>
+<input type="submit" value="Submit">
+<div id="msg" style="color:red"></div>
+</form>
+
+</body>
+</html> 
+
